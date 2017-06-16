@@ -39,4 +39,5 @@ public class Model {
     public ResumeDaoImpl getResumeDao() {
         return resumeDao;
     }
+
 }
