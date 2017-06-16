@@ -14,9 +14,11 @@ public class Main extends Application {
         loader.setLocation(Main.class.getResource("/view.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("Find resume");
+        primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         Controller controller = loader.getController();
+        controller.setMain(this);
     }
 
 

@@ -1,6 +1,8 @@
-package com.findresume.app.model;
+package com.findresume.app.model.threads;
 
 import com.findresume.app.Controller;
+import com.findresume.app.model.Model;
+import com.findresume.app.model.Resume;
 import javafx.application.Platform;
 
 import java.io.IOException;

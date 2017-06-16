@@ -36,7 +36,15 @@ public class ResumeDaoImpl implements ResumeDao{
 
     @Override
     public void deleteAllResumesFromDB() {
-        sessionFactory.getCurrentSession().createQuery("delete from Resume").executeUpdate();
+        Session session = sessionFactory.openSession();
+        List<Resume> resumeList = getResumesFromDB();
+        session.beginTransaction();
+        for (Resume resume : resumeList) {
+            session.delete(resume);
+        }
+        session.getTransaction().commit();
+        session.close();
+
     }
 
     @Override
@@ -44,7 +52,7 @@ public class ResumeDaoImpl implements ResumeDao{
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("from Resume");
         List<Resume> list = query.getResultList();
-
+        session.close();
         return list;
     }
 

@@ -18,7 +18,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="353.0">
                <children>
-                  <ListView fx:id="resumeListView" layoutX="107.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <ListView fx:id="resumeListView" layoutX="107.0" layoutY="34.0" onMouseClicked="#onItemListViewListener" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="310.0">
@@ -56,8 +56,8 @@
                   </GridPane>
                   <ButtonBar layoutX="105.0" layoutY="389.0" prefHeight="39.0" prefWidth="344.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
                     <buttons>
-                      <Button fx:id="deleteFromDBButton" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" text="Delete from DB" />
-                        <Button fx:id="loadFromDBButton" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" text="Load from DB" />
+                      <Button fx:id="deleteFromDBButton" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" onAction="#onDeleteFromDBButtonListener" text="Delete from DB" />
+                        <Button fx:id="loadFromDBButton" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#onLoadFromDBButtonListener" text="Load from DB" />
                         <Button fx:id="startButton" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#onStartButtonListener" text="Start" />
                     </buttons>
                   </ButtonBar>
