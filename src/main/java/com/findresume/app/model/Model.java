@@ -25,7 +25,7 @@ public class Model {
         resumeDao = new ResumeDaoImpl();
     }
 
-    public List<Resume> getVacancies(String age_max, String age_min, String salary) throws IOException {
+    public List<Resume> getResumes(String age_max, String age_min, String salary) throws IOException {
         String answer = HttpMethodUtils.getMethod(
                 String.format("resumes/?age_max=%s&age_min=%s&average_salary=1&geo_id=994&salary=%s",
                         age_max, age_min, salary));
@@ -33,10 +33,6 @@ public class Model {
         builder.registerTypeAdapter(List.class, new JsonResumeConverter());
         Gson gson = builder.create();
         resumes = gson.fromJson(answer, List.class);
-        return resumes;
-    }
-
-    public List<Resume> getResumes() {
         return resumes;
     }
 
