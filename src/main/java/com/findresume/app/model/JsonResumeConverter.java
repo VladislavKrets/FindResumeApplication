@@ -1,4 +1,4 @@
-package com.findresume.app;
+package com.findresume.app.model;
 
 import com.google.gson.*;
 import org.apache.commons.lang.StringEscapeUtils;

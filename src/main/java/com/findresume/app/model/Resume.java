@@ -1,4 +1,4 @@
-package com.findresume.app;
+package com.findresume.app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by lollipop on 16.06.2017.
  */
 @Entity
-@Table(name = "resume")
+@Table(name = "resumes")
 public class Resume {
     @Id
     @Column(name = "id")
@@ -28,6 +28,9 @@ public class Resume {
     private String birthday;
     @Column
     private String sex;
+
+    public Resume() {
+    }
 
     public Resume(int id, String owner_id, String age, String header,
                   String experience, String url, String birthday, String sex) {
